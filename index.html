@@ -95,6 +95,14 @@
           "priceCurrency": "USD",
           "description": "Per month. Everything in Grow plus AI and search-engine visibility, 12 social posts a month, two emails a month, a seasonal promo campaign, short video scripts, and a quarterly strategy call.",
           "url": "https://airliemarketing.com/#pricing"
+        },
+        {
+          "@type": "Offer",
+          "name": "Digital Kickstarter",
+          "price": "1500",
+          "priceCurrency": "USD",
+          "description": "A one-time 3-month program that teaches you to run your own marketing. We set up your foundation together — Google Business Profile, reviews, Google Search Console, and social — and teach you the full process, including a site audit and action plan, a marketing strategy, up to 6 hours of one-on-one coaching, and a monthly performance report.",
+          "url": "https://airliemarketing.com/#pricing"
         }
       ]
     }
@@ -623,6 +631,73 @@ header.site-header {
 }
 .addons-note { color: var(--text-muted); font-weight: 400; font-size: 0.85rem; }
 
+/* ---------- Digital Kickstarter (horizontal card) ---------- */
+.kickstarter {
+  position: relative;
+  margin-top: 40px;
+  background: linear-gradient(160deg, var(--navy) 0%, var(--navy-dark) 100%);
+  color: var(--white);
+  border-radius: var(--radius);
+  padding: 38px 36px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+.kickstarter::after {
+  content: "";
+  position: absolute;
+  top: -110px; right: -70px;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(191, 144, 0, 0.20), transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.kickstarter-main {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 26px;
+}
+@media (min-width: 860px) {
+  .kickstarter-main { grid-template-columns: 40% 1fr; gap: 44px; align-items: center; }
+}
+.kickstarter-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--white);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 999px;
+  margin-bottom: 14px;
+}
+.kickstarter-name { font-size: 1.7rem; font-weight: 800; color: var(--white); line-height: 1.15; }
+.kickstarter-term { color: rgba(255,255,255,0.7); font-weight: 600; font-size: 0.95rem; margin-top: 4px; }
+.kickstarter-price { font-size: 2.4rem; font-weight: 800; color: var(--white); margin: 12px 0 2px; }
+.kickstarter-price span { font-size: 1rem; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.04em; }
+.kickstarter-pitch { color: rgba(255,255,255,0.88); font-size: 1rem; margin: 14px 0 22px; }
+.kickstarter-main .btn { width: 100%; }
+@media (min-width: 860px) { .kickstarter-main .btn { width: auto; } }
+.kickstarter-list { list-style: none; }
+.kickstarter-list li {
+  position: relative;
+  padding: 9px 0 9px 30px;
+  font-size: 0.98rem;
+  color: rgba(255,255,255,0.92);
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+.kickstarter-list li:last-child { border-bottom: none; }
+.kickstarter-list li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 15px;
+  width: 15px; height: 8px;
+  border-left: 2.5px solid var(--gold);
+  border-bottom: 2.5px solid var(--gold);
+  transform: rotate(-45deg);
+}
+
 /* ---------- Why us ---------- */
 .why { background: var(--white); }
 .why-grid {
@@ -1082,7 +1157,7 @@ footer.site-footer {
     <div class="container">
       <div class="pricing-lead">
         <h2>Simple, flat monthly pricing</h2>
-        <p>Plans start at $275/month, with no long contracts — month-to-month after a short start. Our most popular plan is Grow at $450/month. We'll help you pick the right fit on a quick call.</p>
+        <p>Plans start at $275/month, with no long contracts — month-to-month after a short start. Our best value is the Pro plan at $750/month. We'll help you pick the right fit on a quick call.</p>
       </div>
 
       <div class="founding-note">
@@ -1105,9 +1180,8 @@ footer.site-footer {
           <a href="https://calendar.app.google/D2TqLnaYQEtL2vir8" target="_blank" rel="noopener" class="btn btn-outline">Book a call</a>
         </div>
 
-        <!-- Grow (featured) -->
-        <div class="price-card featured">
-          <div class="badge">Most Popular</div>
+        <!-- Grow -->
+        <div class="price-card">
           <div class="price-name">Grow</div>
           <div class="price-tag">$450<span>/mo</span></div>
           <div class="price-sub">Get found and stay top-of-mind</div>
@@ -1124,8 +1198,9 @@ footer.site-footer {
           <a href="https://calendar.app.google/D2TqLnaYQEtL2vir8" target="_blank" rel="noopener" class="btn btn-primary">Book a call</a>
         </div>
 
-        <!-- Pro -->
-        <div class="price-card">
+        <!-- Pro (featured) -->
+        <div class="price-card featured">
+          <div class="badge">Best Value</div>
           <div class="price-name">Pro</div>
           <div class="price-tag">$750<span>/mo</span></div>
           <div class="price-sub">For owners who want to push for more leads</div>
@@ -1150,6 +1225,32 @@ footer.site-footer {
           <li><span>Website refresh*</span><span class="addons-price">$450–$650</span></li>
           <li><span>Google review-generation setup</span><span class="addons-price">$500</span></li>
         </ul>
+      </div>
+
+      <!-- Digital Kickstarter -->
+      <div class="kickstarter">
+        <div class="kickstarter-main">
+          <div class="kickstarter-head">
+            <span class="kickstarter-badge">Learn the process yourself</span>
+            <div class="kickstarter-name">Digital Kickstarter</div>
+            <div class="kickstarter-term">3-month program</div>
+            <div class="kickstarter-price">$1,500 <span>flat</span></div>
+            <p class="kickstarter-pitch">For owners who'd rather learn to market their own business. Over three months, I set up your foundation and teach you my exact process — giving you the tools to effectively conduct your own marketing.</p>
+            <!-- TODO: booking link -->
+            <a href="https://calendar.app.google/D2TqLnaYQEtL2vir8" target="_blank" rel="noopener" class="btn btn-primary">Book a call</a>
+          </div>
+          <div class="kickstarter-details">
+            <ul class="kickstarter-list">
+              <li>A full audit of your online presence, with a prioritized action plan</li>
+              <li>We set up your foundation together — Google Business Profile, reviews, Google Search Console, and your social profiles</li>
+              <li>A marketing plan and strategy built around your business</li>
+              <li>I teach you my exact process for Google, reviews, social, and AI &amp; search visibility</li>
+              <li>Up to 6 hours of one-on-one coaching across the 3 months</li>
+              <li>A performance report each month (3 total)</li>
+              <li>A full suite of effective marketing tools that are yours to keep and run</li>
+            </ul>
+          </div>
+        </div>
       </div>
 
       <div class="pricing-actions">
