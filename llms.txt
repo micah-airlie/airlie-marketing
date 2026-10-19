@@ -1,5 +1,5 @@
 # Airlie Marketing
-> Charlottesville-based marketing for local service businesses that do great work but aren't getting found online. Fixed-price services bought one at a time — Google Business Profile, local SEO and AI visibility, reviews, social posts and websites. Nothing renews unless the customer buys it again.
+> Charlottesville-based marketing for local service businesses that do great work but aren't getting found online. Fixed-price services bought one at a time — Google Business Profile, local SEO and AI visibility, reviews, social posts and websites.
 
 - Business: Airlie Marketing
 - Founder: Micah Scott
@@ -13,11 +13,11 @@
 - Google Profile Setup — $395: profile claimed or built, categories researched, description and services, photos, seeded Q&A, handover.
 - Local SEO Foundation — $550: listings audit and corrections, keyword map, on-page work on up to six pages, LocalBusiness structured data, Search Console, and AI visibility work (knowledge profile, llms.txt, before-and-after AI check).
 - Review Engine Setup — $500: review link and QR code, request and reply templates, crew script, alerts.
-- Website Refresh — from $450, scoped before it's priced.
+- Website Refresh — from $450, depending on scope.
 - One-Page Website Build — $950, or $650 with a plan; half up front, half at launch.
 - Strategy Call — $125 for one hour.
 
-## 30-day services (end after 30 days, never auto-renew)
+## Ongoing services (30-day blocks)
 - Google Profile Management — $195
 - Review Management — $225
 - 30-Day Social Content Pack — $350 (12 Facebook and Instagram posts)
@@ -31,9 +31,7 @@
 - Google Local Ads and Meta Local Ads, launch and management.
 
 ## How to buy
-- Fill in the contact form at https://airliemarketing.com/contact, or text or email Micah. He confirms what's included and sends an invoice to pay online.
+- Use the contact form at https://airliemarketing.com/contact, or call, text or email Micah.
 
 ## Terms
-- The 30 days start when Airlie has everything it needs from the customer, not the day they pay.
-- Refundable until work starts.
-- No contracts. Nothing renews unless the customer buys it again.
+- Fixed prices. No long-term contracts.

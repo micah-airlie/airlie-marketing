@@ -52,7 +52,7 @@
     <div class="container">
       <p class="eyebrow">Get in touch</p>
       <h1>Tell us what you need.</h1>
-      <p class="lead">Pick what you're interested in and add anything we should know. We'll get back to you within one business day — and if none of our services is the right fit, we'll say so.</p>
+      <p class="lead">Share a little about your business and what you're looking for. We'll get back to you within one business day.</p>
     </div>
   </section>
 
@@ -77,6 +77,10 @@
               <input id="f-name" type="text" name="name" required autocomplete="name">
             </div>
             <div class="field">
+              <label for="f-business">Business name</label>
+              <input id="f-business" type="text" name="business_name" required autocomplete="organization">
+            </div>
+            <div class="field">
               <label for="f-email">Email</label>
               <input id="f-email" type="email" name="email" required autocomplete="email">
             </div>
@@ -84,47 +88,43 @@
               <label for="f-phone">Phone (optional)</label>
               <input id="f-phone" type="tel" name="phone" autocomplete="tel">
             </div>
-            <div class="field">
-              <label for="f-business">Business name</label>
-              <input id="f-business" type="text" name="business_name" required autocomplete="organization">
-            </div>
-            <div class="field">
-              <label for="f-service">What are you interested in?</label>
-              <select id="f-service" name="service" required>
-                <option value="not-sure" selected>Not sure yet — help me pick</option>
-                <option value="plan-get-found">Get Found plan</option>
-                <option value="plan-grow">Grow plan</option>
-                <option value="google-profile-setup">Google Profile Setup</option>
-                <option value="local-seo-foundation">Local SEO Foundation</option>
-                <option value="review-engine-setup">Review Engine Setup</option>
-                <option value="review-management">Review Management</option>
-                <option value="profile-management">Google Profile Management</option>
-                <option value="social-content-pack">30-Day Social Content Pack</option>
-                <option value="website-refresh">Website Refresh</option>
-                <option value="one-page-build">One-Page Website Build</option>
-                <option value="larger-website">A larger website project</option>
-                <option value="strategy-call">Strategy Call</option>
-                <option value="paid-ads">Paid ads (coming soon) — tell me when it launches</option>
-                <option value="other">Something else</option>
-              </select>
-            </div>
+            <fieldset class="field checklist" id="f-services">
+              <legend>What are you interested in? <span class="hint">Select all that apply</span></legend>
+              <div class="check-grid">
+                <label class="check"><input type="checkbox" name="services" value="Get Found plan" data-slug="plan-get-found"> Get Found plan</label>
+                <label class="check"><input type="checkbox" name="services" value="Grow plan" data-slug="plan-grow"> Grow plan</label>
+                <label class="check"><input type="checkbox" name="services" value="Google Profile Setup" data-slug="google-profile-setup"> Google Profile Setup</label>
+                <label class="check"><input type="checkbox" name="services" value="Local SEO Foundation" data-slug="local-seo-foundation"> Local SEO Foundation</label>
+                <label class="check"><input type="checkbox" name="services" value="Review Engine Setup" data-slug="review-engine-setup"> Review Engine Setup</label>
+                <label class="check"><input type="checkbox" name="services" value="Review Management" data-slug="review-management"> Review Management</label>
+                <label class="check"><input type="checkbox" name="services" value="Google Profile Management" data-slug="profile-management"> Google Profile Management</label>
+                <label class="check"><input type="checkbox" name="services" value="30-Day Social Content Pack" data-slug="social-content-pack"> 30-Day Social Content Pack</label>
+                <label class="check"><input type="checkbox" name="services" value="Website Refresh" data-slug="website-refresh"> Website Refresh</label>
+                <label class="check"><input type="checkbox" name="services" value="One-Page Website Build" data-slug="one-page-build"> One-Page Website Build</label>
+                <label class="check"><input type="checkbox" name="services" value="A larger website project" data-slug="larger-website"> A larger website project</label>
+                <label class="check"><input type="checkbox" name="services" value="Strategy Call" data-slug="strategy-call"> Strategy Call</label>
+                <label class="check"><input type="checkbox" name="services" value="Paid ads" data-slug="paid-ads"> Paid ads</label>
+                <label class="check"><input type="checkbox" name="services" value="Something else" data-slug="other"> Something else</label>
+                <label class="check"><input type="checkbox" name="services" value="Not sure yet" data-slug="not-sure"> Not sure yet</label>
+              </div>
+              <p class="field-error" id="services-error">Please choose at least one.</p>
+            </fieldset>
             <div class="field">
               <label for="f-message">Anything else we should know?</label>
-              <textarea id="f-message" name="message" placeholder="What's going on, what you've tried, or any questions."></textarea>
+              <textarea id="f-message" name="message"></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary">Send</button>
-            <p class="form-fineprint">No invoice until you've agreed to exactly what's included.</p>
           </form>
         </div>
 
         <div class="form-success" id="form-success">
           <h3>Thanks — we've got it.</h3>
-          <p>We'll get back to you within one business day, usually by email.</p>
+          <p>We'll be in touch within one business day.</p>
           <a href="products.html">See services &amp; pricing</a>
         </div>
 
-        <p class="contact-aside">Rather call or text? <a href="tel:+14342180755">(434) 218-0755</a> · <a href="mailto:micah@airliemarketing.com?subject=Question%20about%20Airlie%20Marketing&body=Hi%20Micah%2C%0A%0AI%27d%20like%20to%20learn%20more%20about%20Airlie%20Marketing.%20Here%27s%20a%20bit%20about%20my%20business%3A%0A%0A-%20Business%20name%3A%0A-%20What%20your%20business%20does%3A%0A-%20Best%20number%20to%20reach%20me%3A%0A%0AThanks!">micah@airliemarketing.com</a></p>
+        <p class="contact-aside">Prefer to call or text? <a href="tel:+14342180755">(434) 218-0755</a> · <a href="mailto:micah@airliemarketing.com?subject=Question%20about%20Airlie%20Marketing&body=Hi%20Micah%2C%0A%0AI%27d%20like%20to%20learn%20more%20about%20Airlie%20Marketing.%20Here%27s%20a%20bit%20about%20my%20business%3A%0A%0A-%20Business%20name%3A%0A-%20What%20your%20business%20does%3A%0A-%20Best%20number%20to%20reach%20me%3A%0A%0AThanks!">micah@airliemarketing.com</a></p>
 
       </div>
     </div>
@@ -162,17 +162,12 @@
     var errorBox = document.getElementById('form-error');
     var params = new URLSearchParams(window.location.search);
 
-    // Pre-select the service from ?service=<slug>; ignore unknown values.
+    // Pre-check the service from ?service=<slug>; ignore unknown values.
     var svc = params.get('service');
     if (svc && form) {
-      var sel = form.querySelector('select[name="service"]');
-      if (sel) {
-        for (var i = 0; i < sel.options.length; i++) {
-          if (sel.options[i].value === svc) { sel.selectedIndex = i; break; }
-        }
-      }
+      var box = form.querySelector('input[name="services"][data-slug="' + svc.replace(/[^a-z0-9-]/g, '') + '"]');
+      if (box) box.checked = true;
     }
-
     // Arrived via the no-JS redirect (?sent=1): show success in place of the form.
     if (params.get('sent') === '1') {
       if (card) card.style.display = 'none';
@@ -187,7 +182,19 @@
         var label = btn ? btn.textContent : '';
         if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
 
-        var data = Object.fromEntries(new FormData(form));
+        var picked = Array.prototype.map.call(form.querySelectorAll('input[name="services"]:checked'), function (c) { return c.value; });
+        var svcErr = document.getElementById('services-error');
+        if (!picked.length) {
+          if (svcErr) svcErr.style.display = 'block';
+          if (btn) { btn.disabled = false; btn.textContent = label; }
+          document.getElementById('f-services').scrollIntoView({ behavior: 'smooth', block: 'center' });
+          return;
+        }
+        if (svcErr) svcErr.style.display = 'none';
+        var fd = new FormData(form);
+        fd.delete('services');
+        var data = Object.fromEntries(fd);
+        data.services = picked.join(', ');
         fetch('https://api.web3forms.com/submit', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
