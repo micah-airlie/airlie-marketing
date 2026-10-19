@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get in Touch | Airlie Marketing</title>
+  <meta name="description" content="Tell Airlie Marketing what you need — a Google profile, reviews, social posts or a website — and get a straight answer on which service fits.">
+
+  <link rel="canonical" href="https://airliemarketing.com/contact">
+  <meta property="og:title" content="Get in Touch | Airlie Marketing">
+  <meta property="og:description" content="Tell Airlie Marketing what you need and get a straight answer on which service fits.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://airliemarketing.com/contact">
+  <meta property="og:image" content="https://airliemarketing.com/micah-scott.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <!-- Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============ HEADER / NAV ============ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">A</span>
+        <span class="logo-text">Airlie Marketing</span>
+      </a>
+      <nav class="main-nav">
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="products.html">Services</a>
+          <a href="index.html#pricing">Plans</a>
+          <a href="about.html">About</a>
+          <a href="contact.html" class="active">Contact</a>
+        </div>
+        <a href="contact.html" class="btn btn-sm btn-primary header-cta">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+  <!-- ============ PAGE HERO ============ -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Get in touch</p>
+      <h1>Tell us what you need.</h1>
+      <p class="lead">Pick what you're interested in and add anything we should know. We'll get back to you within one business day — and if none of our services is the right fit, we'll say so.</p>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT FORM ============ -->
+  <section class="contact">
+    <div class="container">
+      <div class="contact-wrap">
+
+        <div class="contact-card" id="form-card">
+          <div class="form-error" id="form-error">That didn't send. Please try again, or email <a href="mailto:micah@airliemarketing.com">micah@airliemarketing.com</a>.</div>
+
+          <form id="enquiry-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="a2ffef39-b2a8-4dba-898c-4112eff6d57f">
+            <input type="hidden" name="subject" value="New enquiry from airliemarketing.com">
+            <input type="hidden" name="from_name" value="Airlie website">
+            <input type="hidden" name="redirect" value="https://airliemarketing.com/contact?sent=1">
+            <!-- Honeypot: real people never see or check this -->
+            <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" style="display:none;">
+
+            <div class="field">
+              <label for="f-name">Name</label>
+              <input id="f-name" type="text" name="name" required autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="f-email">Email</label>
+              <input id="f-email" type="email" name="email" required autocomplete="email">
+            </div>
+            <div class="field">
+              <label for="f-phone">Phone (optional)</label>
+              <input id="f-phone" type="tel" name="phone" autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="f-business">Business name</label>
+              <input id="f-business" type="text" name="business_name" required autocomplete="organization">
+            </div>
+            <div class="field">
+              <label for="f-service">What are you interested in?</label>
+              <select id="f-service" name="service" required>
+                <option value="not-sure" selected>Not sure yet — help me pick</option>
+                <option value="plan-get-found">Get Found plan</option>
+                <option value="plan-grow">Grow plan</option>
+                <option value="google-profile-setup">Google Profile Setup</option>
+                <option value="local-seo-foundation">Local SEO Foundation</option>
+                <option value="review-engine-setup">Review Engine Setup</option>
+                <option value="review-management">Review Management</option>
+                <option value="profile-management">Google Profile Management</option>
+                <option value="social-content-pack">30-Day Social Content Pack</option>
+                <option value="website-refresh">Website Refresh</option>
+                <option value="one-page-build">One-Page Website Build</option>
+                <option value="larger-website">A larger website project</option>
+                <option value="strategy-call">Strategy Call</option>
+                <option value="paid-ads">Paid ads (coming soon) — tell me when it launches</option>
+                <option value="other">Something else</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-message">Anything else we should know?</label>
+              <textarea id="f-message" name="message" placeholder="What's going on, what you've tried, or any questions."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Send</button>
+            <p class="form-fineprint">No invoice until you've agreed to exactly what's included.</p>
+          </form>
+        </div>
+
+        <div class="form-success" id="form-success">
+          <h3>Thanks — we've got it.</h3>
+          <p>We'll get back to you within one business day, usually by email.</p>
+          <a href="products.html">See services &amp; pricing</a>
+        </div>
+
+        <p class="contact-aside">Rather call or text? <a href="tel:+14342180755">(434) 218-0755</a> · <a href="mailto:micah@airliemarketing.com?subject=Question%20about%20Airlie%20Marketing&body=Hi%20Micah%2C%0A%0AI%27d%20like%20to%20learn%20more%20about%20Airlie%20Marketing.%20Here%27s%20a%20bit%20about%20my%20business%3A%0A%0A-%20Business%20name%3A%0A-%20What%20your%20business%20does%3A%0A-%20Best%20number%20to%20reach%20me%3A%0A%0AThanks!">micah@airliemarketing.com</a></p>
+
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container">
+      <a href="index.html" class="logo"><span class="logo-mark">A</span> Airlie Marketing</a>
+      <p class="footer-tagline">Done-for-you marketing for local Charlottesville service businesses.</p>
+      <div class="footer-meta">
+        <a href="tel:+14342180755">(434) 218-0755</a>
+        <span>|</span>
+        <a href="mailto:micah@airliemarketing.com?subject=Question%20about%20Airlie%20Marketing&body=Hi%20Micah%2C%0A%0AI%27d%20like%20to%20learn%20more%20about%20Airlie%20Marketing.%20Here%27s%20a%20bit%20about%20my%20business%3A%0A%0A-%20Business%20name%3A%0A-%20What%20your%20business%20does%3A%0A-%20Best%20number%20to%20reach%20me%3A%0A%0AThanks!">micah@airliemarketing.com</a>
+        <span>|</span>
+        <span>Serving Charlottesville &amp; Albemarle County</span>
+        <span>|</span>
+        <span>© 2026</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile sticky CTA (phones only) -->
+  <div class="mobile-cta-bar">
+    <a href="contact.html" class="btn btn-primary">Get in touch</a>
+  </div>
+
+  <script>
+  (function () {
+    var form = document.getElementById('enquiry-form');
+    var card = document.getElementById('form-card');
+    var success = document.getElementById('form-success');
+    var errorBox = document.getElementById('form-error');
+    var params = new URLSearchParams(window.location.search);
+
+    // Pre-select the service from ?service=<slug>; ignore unknown values.
+    var svc = params.get('service');
+    if (svc && form) {
+      var sel = form.querySelector('select[name="service"]');
+      if (sel) {
+        for (var i = 0; i < sel.options.length; i++) {
+          if (sel.options[i].value === svc) { sel.selectedIndex = i; break; }
+        }
+      }
+    }
+
+    // Arrived via the no-JS redirect (?sent=1): show success in place of the form.
+    if (params.get('sent') === '1') {
+      if (card) card.style.display = 'none';
+      if (success) success.style.display = 'block';
+    }
+
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (errorBox) errorBox.style.display = 'none';
+        var btn = form.querySelector('button[type="submit"]');
+        var label = btn ? btn.textContent : '';
+        if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+
+        var data = Object.fromEntries(new FormData(form));
+        fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(data)
+        })
+        .then(function (res) {
+          return res.json().then(function (json) { return { ok: res.ok, json: json }; });
+        })
+        .then(function (r) {
+          if (r.ok && r.json && r.json.success !== false) {
+            card.style.display = 'none';
+            success.style.display = 'block';
+            success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          } else {
+            throw new Error('submit failed');
+          }
+        })
+        .catch(function () {
+          if (errorBox) errorBox.style.display = 'block';
+          if (btn) { btn.disabled = false; btn.textContent = label; }
+        });
+      });
+    }
+  })();
+  </script>
+
+</body>
+</html>

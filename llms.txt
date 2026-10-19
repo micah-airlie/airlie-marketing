@@ -1,31 +1,39 @@
 # Airlie Marketing
-> Charlottesville-based done-for-you marketing for local service businesses that do great work but aren't getting found online. We handle Google Business Profile, reviews, social, Nextdoor, and AI & search visibility so local service businesses get found and get called.
+> Charlottesville-based marketing for local service businesses that do great work but aren't getting found online. Fixed-price services bought one at a time — Google Business Profile, local SEO and AI visibility, reviews, social posts and websites. Nothing renews unless the customer buys it again.
 
 - Business: Airlie Marketing
 - Founder: Micah Scott
-- Serving: Charlottesville & Albemarle County, Virginia
+- Based in: Charlottesville, Virginia
 - Website: https://airliemarketing.com
+- Services and prices: https://airliemarketing.com/products
 - Phone / text: (434) 218-0755
 - Email: micah@airliemarketing.com
 
-## Plans
-- Get Found — $275/month: Local SEO (Google Business Profile management + consistent listings), review responses, 4 posts/month, branded graphics.
-- Grow — $450/month: adds weekly Google posts, active review generation, Nextdoor, 8 posts/month, monthly email, monthly report.
-- Pro — $750/month (best value): adds AI & search visibility, 12 posts/month, 2 emails/month, seasonal campaign, video scripts, quarterly strategy call.
-- Digital Kickstarter — $1,500 flat for 3 months: a done-with-you program that teaches you to run your own marketing. Includes a site audit and action plan, foundation setup (Google Business Profile, reviews, Google Search Console, social), a marketing strategy, up to 6 hours of one-on-one coaching, and a monthly performance report.
+## One-time services
+- Google Profile Setup — $395: profile claimed or built, categories researched, description and services, photos, seeded Q&A, handover.
+- Local SEO Foundation — $550: listings audit and corrections, keyword map, on-page work on up to six pages, LocalBusiness structured data, Search Console, and AI visibility work (knowledge profile, llms.txt, before-and-after AI check).
+- Review Engine Setup — $500: review link and QR code, request and reply templates, crew script, alerts.
+- Website Refresh — from $450, scoped before it's priced.
+- One-Page Website Build — $950, or $650 with a plan; half up front, half at launch.
+- Strategy Call — $125 for one hour.
 
-Founding client pricing: these rates are locked in for 12 months for founding clients, in exchange for an honest review and permission to share results as a case study.
+## 30-day services (end after 30 days, never auto-renew)
+- Google Profile Management — $195
+- Review Management — $225
+- 30-Day Social Content Pack — $350 (12 Facebook and Instagram posts)
 
-## One-time add-ons
-- One-page website build — $950 (or $650 with any monthly plan; billed half up front, half at launch)
-- Website refresh (words, design, and layout) — $450–$650
-- Google review-generation setup — $500
+## Plans (bundles of the 30-day services)
+- Get Found — $355 per 30 days: Google Profile Management + Review Management.
+- Grow — $655 per 30 days: Get Found + 30-Day Social Content Pack.
+- Pro — coming soon (adds paid ads management).
 
-## Why Airlie
-Local and family-run. Month-to-month, no long contracts. You approve everything. About 10–15 minutes a month from the client.
+## Coming soon
+- Google Local Ads and Meta Local Ads, launch and management.
 
-## Common questions
-Q: Do I have to sign a long contract?
-A: No — a 3-month start, then month-to-month, cancel anytime.
-Q: What does it cost?
-A: Plans start at $275/month; most choose the $450 Grow plan.
+## How to buy
+- Fill in the contact form at https://airliemarketing.com/contact, or text or email Micah. He confirms what's included and sends an invoice to pay online.
+
+## Terms
+- The 30 days start when Airlie has everything it needs from the customer, not the day they pay.
+- Refundable until work starts.
+- No contracts. Nothing renews unless the customer buys it again.
