@@ -250,7 +250,7 @@ header.site-header {
   gap: 10px;
 }
 .trust-bar span:not(:last-child)::after {
-  content: "â€¢";
+  content: "\2022";
   margin-left: 8px;
   opacity: 0.6;
 }
