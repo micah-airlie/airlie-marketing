@@ -289,6 +289,13 @@ header.site-header {
 }
 .step h3 { margin-bottom: 8px; }
 .step p { font-size: 0.98rem; }
+.step p a {
+  color: var(--gold-ink);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.step p a:hover { color: var(--gold-dark); }
 
 /* ---------- What you get ---------- */
 .features { background: var(--white); }
