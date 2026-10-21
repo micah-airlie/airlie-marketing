@@ -441,8 +441,9 @@ footer.site-footer .footer-row { margin-top: 0; border-top: 0; }
 @media (max-width: 680px) {
   .container { padding: 0 20px; }
   .header-inner { padding: 14px 20px; }
-  /* smaller headshot, pinned to the left on phones */
-  .hero-figure { max-width: 200px; align-self: flex-start; }
+  /* smaller, more square headshot, pinned left on phones */
+  .hero-figure { max-width: 260px; align-self: flex-start; }
+  .hero-figure img { aspect-ratio: 1 / 1; }
   section { padding: 64px 0; }
   .hero { padding: 56px 0 64px; }
   .intro-band, .faq { padding: 64px 0; }
