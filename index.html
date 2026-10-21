@@ -160,7 +160,7 @@
           "price": "355",
           "priceCurrency": "USD",
           "description": "Google Profile Management plus Review Management, bundled for less than buying them separately.",
-          "url": "https://airliemarketing.com/#pricing"
+          "url": "https://airliemarketing.com/products#plans"
         },
         {
           "@type": "Offer",
@@ -168,7 +168,7 @@
           "price": "655",
           "priceCurrency": "USD",
           "description": "Everything in Get Found plus the 30-Day Social Content Pack, bundled for less than buying them separately.",
-          "url": "https://airliemarketing.com/#pricing"
+          "url": "https://airliemarketing.com/products#plans"
         }
       ]
     }
@@ -271,15 +271,44 @@
       </a>
       <nav class="main-nav" aria-label="Main">
         <div class="nav-links">
+          <a href="index.html" class="active">Home</a>
           <a href="products.html">Services</a>
-          <a href="index.html#plans">Plans</a>
+          <a href="products.html#plans">Plans</a>
           <a href="about.html">About</a>
-          <a href="tel:+14342180755" class="nav-phone">(434) 218-0755</a>
+          <a href="contact.html">Contact Us</a>
         </div>
+        <a href="tel:+14342180755" class="nav-phone">(434) 218-0755</a>
         <a href="contact.html" class="btn btn-navcta">Get in touch</a>
+        <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="menu-toggle-label">Menu</span>
+          <span class="menu-toggle-lines" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
       </nav>
     </div>
   </header>
+
+  <!-- Mobile menu panel -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-top">
+      <a href="index.html" class="wordmark" aria-label="Airlie Marketing — home">
+        <span class="wm-name">AIRLIE</span>
+        <span class="wm-rule"></span>
+        <span class="wm-sub">MARKETING</span>
+      </a>
+      <button type="button" class="menu-close">Close</button>
+    </div>
+    <nav class="mobile-menu-links" aria-label="Mobile">
+      <a href="index.html" class="active">Home</a>
+      <a href="products.html">Services</a>
+      <a href="products.html#plans">Plans</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+    <div class="mobile-menu-foot">
+      <a href="tel:+14342180755" class="mobile-menu-phone">(434) 218-0755</a>
+      <a href="contact.html" class="btn btn-navy">Get in touch</a>
+    </div>
+  </div>
 
   <main>
 
@@ -319,40 +348,16 @@
     <div class="container">
       <div class="services-head">
         <h2>What we do</h2>
-        <a href="products.html" class="services-all">All services &amp; pricing</a>
       </div>
-      <div class="services-table">
-        <div class="service-row">
-          <h3>Google Business Profile</h3>
-          <p>For most local businesses, this is the first thing a new customer sees. We set it up completely and keep your hours, photos and details accurate, so the people who find you can call, visit or book.</p>
-          <p class="service-price">From $195</p>
-        </div>
-        <div class="service-row">
-          <h3>Reviews</h3>
-          <p>We help you earn more reviews and respond to every one in your voice. Reviews are often what decides whether a customer picks you or the next business.</p>
-          <p class="service-price">From $225</p>
-        </div>
-        <div class="service-row">
-          <h3>AI &amp; search visibility</h3>
-          <p>When someone asks Google or an AI assistant for a business like yours, we make sure it finds accurate, complete information about you.</p>
-          <p class="service-price">$550</p>
-        </div>
-        <div class="service-row">
-          <h3>Social media</h3>
-          <p>Twelve posts a month on Facebook and Instagram, built around your business and written in your voice.</p>
-          <p class="service-price">$350 / 30 days</p>
-        </div>
-        <div class="service-row">
-          <h3>Your website</h3>
-          <p>A refresh of the site you have, or a new one-page site built to turn visitors into customers.</p>
-          <p class="service-price">From $450</p>
-        </div>
-        <div class="service-row soon">
-          <h3>Paid ads</h3>
-          <p>Google and Facebook ads that reach customers in your service area.</p>
-          <p class="soon-tag">COMING SOON</p>
-        </div>
+      <div class="services-preview">
+        <div class="svc-row"><span class="svc-name">Google Business Profile</span><span class="svc-price">From $195</span></div>
+        <div class="svc-row"><span class="svc-name">Reviews</span><span class="svc-price">From $225</span></div>
+        <div class="svc-row"><span class="svc-name">AI &amp; search visibility</span><span class="svc-price">$550</span></div>
+        <div class="svc-row"><span class="svc-name">Social media</span><span class="svc-price">$350 / 30 days</span></div>
+        <div class="svc-row"><span class="svc-name">Your website</span><span class="svc-price">From $450</span></div>
+        <div class="svc-row soon"><span class="svc-name">Paid ads</span><span class="svc-price soon-tag">Coming soon</span></div>
       </div>
+      <p class="services-preview-foot"><a href="products.html" class="view-all">View all services &rarr;</a></p>
     </div>
   </section>
 
@@ -380,35 +385,28 @@
     </div>
   </section>
 
-  <!-- ============ MONTHLY PLANS ============ -->
-  <section class="plans" id="plans">
+  <!-- ============ MONTHLY PLANS (preview) ============ -->
+  <section class="plans-preview" id="plans-preview">
     <div class="container">
       <div class="plans-head">
         <h2>Monthly plans</h2>
         <p class="plans-tag">Our ongoing services, bundled together for less.</p>
       </div>
-      <div class="plans-grid">
-        <div class="plan-card">
+      <div class="plans-preview-grid">
+        <div class="plan-prev">
           <h3 class="plan-name">GET FOUND</h3>
           <p class="plan-price">$355<span> / 30 days</span></p>
-          <p class="plan-desc">Google Profile Management and Review Management.</p>
-          <p class="plan-maths">Bought separately $420 · <span class="save">You save $65</span></p>
-          <a href="contact.html?service=plan-get-found" class="btn btn-plan-outline">Ask about this</a>
         </div>
-        <div class="plan-card featured">
+        <div class="plan-prev">
           <h3 class="plan-name">GROW <span class="plan-badge">BEST VALUE</span></h3>
           <p class="plan-price">$655<span> / 30 days</span></p>
-          <p class="plan-desc">Everything in Get Found, plus the 30-Day Social Content Pack.</p>
-          <p class="plan-maths">Bought separately $770 · <span class="save">You save $115</span></p>
-          <a href="contact.html?service=plan-grow" class="btn btn-gold plan-btn">Ask about this</a>
         </div>
-        <div class="plan-card soon">
+        <div class="plan-prev soon">
           <h3 class="plan-name">PRO</h3>
           <p class="plan-soon">Coming soon</p>
-          <p class="plan-desc">Everything in Grow, plus Google or Meta ads management.</p>
         </div>
       </div>
-      <p class="plans-note">Each plan covers 30 days, with no long-term contract. Only need one piece? <a href="products.html">Every service is available on its own.</a></p>
+      <p class="plans-preview-foot"><a href="products.html#plans" class="view-all-light">View all monthly plans &rarr;</a></p>
     </div>
   </section>
 
@@ -574,6 +572,52 @@
         if (errorBox) errorBox.style.display = 'block';
         if (btn) { btn.disabled = false; btn.textContent = label; }
       });
+    });
+  })();
+  </script>
+
+  <!-- Mobile menu (open/close, Escape, focus, scroll-lock) -->
+  <script>
+  (function () {
+    var toggle = document.querySelector('.menu-toggle');
+    var panel = document.getElementById('mobile-menu');
+    if (!toggle || !panel) return;
+    var closeBtn = panel.querySelector('.menu-close');
+    function focusables() { return panel.querySelectorAll('a[href], button:not([disabled])'); }
+    function onKey(e) {
+      if (e.key === 'Escape') { e.preventDefault(); closeMenu(); return; }
+      if (e.key === 'Tab') {
+        var f = focusables(); if (!f.length) return;
+        var first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    }
+    function openMenu() {
+      panel.classList.add('open');
+      panel.setAttribute('aria-hidden', 'false');
+      toggle.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('menu-open');
+      document.addEventListener('keydown', onKey, true);
+      (closeBtn || focusables()[0]).focus();
+    }
+    function closeMenu() {
+      panel.classList.remove('open');
+      panel.setAttribute('aria-hidden', 'true');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('menu-open');
+      document.removeEventListener('keydown', onKey, true);
+      toggle.focus();
+    }
+    toggle.addEventListener('click', function () {
+      panel.classList.contains('open') ? closeMenu() : openMenu();
+    });
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+    Array.prototype.forEach.call(panel.querySelectorAll('a'), function (a) {
+      a.addEventListener('click', closeMenu);
+    });
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 900 && panel.classList.contains('open')) closeMenu();
     });
   })();
   </script>

@@ -148,7 +148,7 @@
         "@type": "Offer",
         "price": "355",
         "priceCurrency": "USD",
-        "url": "https://airliemarketing.com/#pricing",
+        "url": "https://airliemarketing.com/products#plans",
         "itemOffered": {
           "@type": "Service",
           "name": "Get Found plan",
@@ -162,7 +162,7 @@
         "@type": "Offer",
         "price": "655",
         "priceCurrency": "USD",
-        "url": "https://airliemarketing.com/#pricing",
+        "url": "https://airliemarketing.com/products#plans",
         "itemOffered": {
           "@type": "Service",
           "name": "Grow plan",
@@ -200,15 +200,44 @@
       </a>
       <nav class="main-nav" aria-label="Main">
         <div class="nav-links">
+          <a href="index.html">Home</a>
           <a href="products.html" class="active">Services</a>
-          <a href="index.html#plans">Plans</a>
+          <a href="products.html#plans">Plans</a>
           <a href="about.html">About</a>
-          <a href="tel:+14342180755" class="nav-phone">(434) 218-0755</a>
+          <a href="contact.html">Contact Us</a>
         </div>
+        <a href="tel:+14342180755" class="nav-phone">(434) 218-0755</a>
         <a href="contact.html" class="btn btn-navcta">Get in touch</a>
+        <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="menu-toggle-label">Menu</span>
+          <span class="menu-toggle-lines" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
       </nav>
     </div>
   </header>
+
+  <!-- Mobile menu panel -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-top">
+      <a href="index.html" class="wordmark" aria-label="Airlie Marketing — home">
+        <span class="wm-name">AIRLIE</span>
+        <span class="wm-rule"></span>
+        <span class="wm-sub">MARKETING</span>
+      </a>
+      <button type="button" class="menu-close">Close</button>
+    </div>
+    <nav class="mobile-menu-links" aria-label="Mobile">
+      <a href="index.html">Home</a>
+      <a href="products.html" class="active">Services</a>
+      <a href="products.html#plans">Plans</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+    <div class="mobile-menu-foot">
+      <a href="tel:+14342180755" class="mobile-menu-phone">(434) 218-0755</a>
+      <a href="contact.html" class="btn btn-navy">Get in touch</a>
+    </div>
+  </div>
 
   <main>
 
@@ -226,7 +255,7 @@
     <div class="container">
 
       <div class="products-intro">
-        <p>Setup services are one-time projects. Ongoing services run in 30-day blocks, and you can bundle them into <a href="index.html#pricing">a monthly plan</a> for less.</p>
+        <p>Setup services are one-time projects. Ongoing services run in 30-day blocks, and you can bundle them into <a href="#plans">a monthly plan</a> for less.</p>
       </div>
 
       <!-- Group: Get found -->
@@ -402,7 +431,44 @@
         <p class="product-desc">Ongoing creative, audience and budget management to keep your cost per lead down.</p>
       </div>
 
-      <!-- Below the products -->
+    </div>
+  </section>
+
+  <!-- ============ MONTHLY PLANS ============ -->
+  <section class="plans" id="plans">
+    <div class="container">
+      <div class="plans-head">
+        <h2>Monthly plans</h2>
+        <p class="plans-tag">Our ongoing services, bundled together for less.</p>
+      </div>
+      <div class="plans-grid">
+        <div class="plan-card">
+          <h3 class="plan-name">GET FOUND</h3>
+          <p class="plan-price">$355<span> / 30 days</span></p>
+          <p class="plan-desc">Google Profile Management and Review Management.</p>
+          <p class="plan-maths">Bought separately $420 · <span class="save">You save $65</span></p>
+          <a href="contact.html?service=plan-get-found" class="btn btn-plan-outline">Ask about this</a>
+        </div>
+        <div class="plan-card featured">
+          <h3 class="plan-name">GROW <span class="plan-badge">BEST VALUE</span></h3>
+          <p class="plan-price">$655<span> / 30 days</span></p>
+          <p class="plan-desc">Everything in Get Found, plus the 30-Day Social Content Pack.</p>
+          <p class="plan-maths">Bought separately $770 · <span class="save">You save $115</span></p>
+          <a href="contact.html?service=plan-grow" class="btn btn-gold plan-btn">Ask about this</a>
+        </div>
+        <div class="plan-card soon">
+          <h3 class="plan-name">PRO</h3>
+          <p class="plan-soon">Coming soon</p>
+          <p class="plan-desc">Everything in Grow, plus Google or Meta ads management.</p>
+        </div>
+      </div>
+      <p class="plans-note">Each plan covers 30 days, with no long-term contract.</p>
+    </div>
+  </section>
+
+  <!-- ============ NOT SURE / HELP ============ -->
+  <section class="help-section">
+    <div class="container">
       <div class="help-block">
         <h3>Not sure where to start?</h3>
         <p>Tell us about your business and what you're looking for, and we'll recommend the right fit.</p>
@@ -414,7 +480,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -433,6 +498,52 @@
     <a href="contact.html" class="btn btn-gold">Get in touch</a>
     <a href="tel:+14342180755" class="mobile-cta-call">or call <span class="num">(434) 218-0755</span></a>
   </div>
+
+  <!-- Mobile menu (open/close, Escape, focus, scroll-lock) -->
+  <script>
+  (function () {
+    var toggle = document.querySelector('.menu-toggle');
+    var panel = document.getElementById('mobile-menu');
+    if (!toggle || !panel) return;
+    var closeBtn = panel.querySelector('.menu-close');
+    function focusables() { return panel.querySelectorAll('a[href], button:not([disabled])'); }
+    function onKey(e) {
+      if (e.key === 'Escape') { e.preventDefault(); closeMenu(); return; }
+      if (e.key === 'Tab') {
+        var f = focusables(); if (!f.length) return;
+        var first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    }
+    function openMenu() {
+      panel.classList.add('open');
+      panel.setAttribute('aria-hidden', 'false');
+      toggle.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('menu-open');
+      document.addEventListener('keydown', onKey, true);
+      (closeBtn || focusables()[0]).focus();
+    }
+    function closeMenu() {
+      panel.classList.remove('open');
+      panel.setAttribute('aria-hidden', 'true');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('menu-open');
+      document.removeEventListener('keydown', onKey, true);
+      toggle.focus();
+    }
+    toggle.addEventListener('click', function () {
+      panel.classList.contains('open') ? closeMenu() : openMenu();
+    });
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+    Array.prototype.forEach.call(panel.querySelectorAll('a'), function (a) {
+      a.addEventListener('click', closeMenu);
+    });
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 900 && panel.classList.contains('open')) closeMenu();
+    });
+  })();
+  </script>
 
 </body>
 </html>

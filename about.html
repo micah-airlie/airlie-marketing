@@ -78,15 +78,44 @@
       </a>
       <nav class="main-nav" aria-label="Main">
         <div class="nav-links">
+          <a href="index.html">Home</a>
           <a href="products.html">Services</a>
-          <a href="index.html#plans">Plans</a>
+          <a href="products.html#plans">Plans</a>
           <a href="about.html" class="active">About</a>
-          <a href="tel:+14342180755" class="nav-phone">(434) 218-0755</a>
+          <a href="contact.html">Contact Us</a>
         </div>
+        <a href="tel:+14342180755" class="nav-phone">(434) 218-0755</a>
         <a href="contact.html" class="btn btn-navcta">Get in touch</a>
+        <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="menu-toggle-label">Menu</span>
+          <span class="menu-toggle-lines" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
       </nav>
     </div>
   </header>
+
+  <!-- Mobile menu panel -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-top">
+      <a href="index.html" class="wordmark" aria-label="Airlie Marketing — home">
+        <span class="wm-name">AIRLIE</span>
+        <span class="wm-rule"></span>
+        <span class="wm-sub">MARKETING</span>
+      </a>
+      <button type="button" class="menu-close">Close</button>
+    </div>
+    <nav class="mobile-menu-links" aria-label="Mobile">
+      <a href="index.html">Home</a>
+      <a href="products.html">Services</a>
+      <a href="products.html#plans">Plans</a>
+      <a href="about.html" class="active">About</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+    <div class="mobile-menu-foot">
+      <a href="tel:+14342180755" class="mobile-menu-phone">(434) 218-0755</a>
+      <a href="contact.html" class="btn btn-navy">Get in touch</a>
+    </div>
+  </div>
 
   <main>
 
@@ -202,6 +231,52 @@
     <a href="contact.html" class="btn btn-gold">Get in touch</a>
     <a href="tel:+14342180755" class="mobile-cta-call">or call <span class="num">(434) 218-0755</span></a>
   </div>
+
+  <!-- Mobile menu (open/close, Escape, focus, scroll-lock) -->
+  <script>
+  (function () {
+    var toggle = document.querySelector('.menu-toggle');
+    var panel = document.getElementById('mobile-menu');
+    if (!toggle || !panel) return;
+    var closeBtn = panel.querySelector('.menu-close');
+    function focusables() { return panel.querySelectorAll('a[href], button:not([disabled])'); }
+    function onKey(e) {
+      if (e.key === 'Escape') { e.preventDefault(); closeMenu(); return; }
+      if (e.key === 'Tab') {
+        var f = focusables(); if (!f.length) return;
+        var first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    }
+    function openMenu() {
+      panel.classList.add('open');
+      panel.setAttribute('aria-hidden', 'false');
+      toggle.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('menu-open');
+      document.addEventListener('keydown', onKey, true);
+      (closeBtn || focusables()[0]).focus();
+    }
+    function closeMenu() {
+      panel.classList.remove('open');
+      panel.setAttribute('aria-hidden', 'true');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('menu-open');
+      document.removeEventListener('keydown', onKey, true);
+      toggle.focus();
+    }
+    toggle.addEventListener('click', function () {
+      panel.classList.contains('open') ? closeMenu() : openMenu();
+    });
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+    Array.prototype.forEach.call(panel.querySelectorAll('a'), function (a) {
+      a.addEventListener('click', closeMenu);
+    });
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 900 && panel.classList.contains('open')) closeMenu();
+    });
+  })();
+  </script>
 
 </body>
 </html>
