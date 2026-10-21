@@ -1,0 +1,11 @@
+# Cloudflare Pages custom headers
+# Always revalidate the stylesheet so CSS updates show immediately
+# (cheap 304 when unchanged, fresh file when it changed).
+/styles.css
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Same for the sitemap/robots/llms text files
+/sitemap.xml
+  Cache-Control: public, max-age=0, must-revalidate
+/llms.txt
+  Cache-Control: public, max-age=0, must-revalidate
