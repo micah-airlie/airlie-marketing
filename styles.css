@@ -428,16 +428,21 @@ footer.site-footer .footer-row { margin-top: 0; border-top: 0; }
   .hero-figure { max-width: 340px; align-self: flex-start; }
 }
 @media (max-width: 760px) {
-  .header-inner { padding: 14px 20px; }
-  .main-nav { gap: 16px; width: 100%; justify-content: space-between; }
-  .nav-links { gap: 18px; font-size: 13px; }
+  .header-inner { padding: 14px 20px; gap: 10px; }
+  /* keep the wordmark and nav links on one line */
+  .main-nav { gap: 14px; }
+  .nav-links { gap: 16px; font-size: 13px; }
   .nav-phone, .btn-navcta { display: none; }
+  .wm-name { font-size: 17px; }
+  .wm-sub { font-size: 8px; letter-spacing: 0.38em; padding-left: 0.38em; }
   .service-row { grid-template-columns: 1fr; gap: 6px; padding: 24px 22px; }
   .service-price, .soon-tag { text-align: left !important; }
 }
 @media (max-width: 680px) {
   .container { padding: 0 20px; }
   .header-inner { padding: 14px 20px; }
+  /* smaller headshot, pinned to the left on phones */
+  .hero-figure { max-width: 200px; align-self: flex-start; }
   section { padding: 64px 0; }
   .hero { padding: 56px 0 64px; }
   .intro-band, .faq { padding: 64px 0; }
