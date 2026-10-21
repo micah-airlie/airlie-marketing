@@ -499,6 +499,7 @@ details.faq-item .faq-answer {
   color: var(--text-muted);
   font-size: 0.99rem;
 }
+details.faq-item .faq-answer a { color: var(--gold-ink); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 
 /* ---------- Final CTA ---------- */
 .final-cta {
