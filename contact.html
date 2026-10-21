@@ -16,10 +16,10 @@
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
-  <!-- Fonts: Inter -->
+  <!-- Fonts: Poppins + Caladea -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Caladea:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
 
@@ -40,19 +40,19 @@
   <!-- ============ HEADER / NAV ============ -->
   <header class="site-header">
     <div class="header-inner">
-      <a href="index.html" class="logo">
-        <span class="logo-mark">A</span>
-        <span class="logo-text">Airlie Marketing</span>
+      <a href="index.html" class="wordmark" aria-label="Airlie Marketing — home">
+        <span class="wm-name">AIRLIE</span>
+        <span class="wm-rule"></span>
+        <span class="wm-sub">MARKETING</span>
       </a>
-      <nav class="main-nav">
+      <nav class="main-nav" aria-label="Main">
         <div class="nav-links">
-          <a href="index.html">Home</a>
           <a href="products.html">Services</a>
-          <a href="index.html#pricing">Plans</a>
+          <a href="index.html#plans">Plans</a>
           <a href="about.html">About</a>
-          <a href="contact.html" class="active">Contact</a>
+          <a href="tel:+14342180755" class="nav-phone">(434) 218-0755</a>
         </div>
-        <a href="contact.html" class="btn btn-sm btn-primary header-cta">Get in touch</a>
+        <a href="contact.html" class="btn btn-navcta active">Get in touch</a>
       </nav>
     </div>
   </header>
@@ -146,24 +146,15 @@
 
   <!-- ============ FOOTER ============ -->
   <footer class="site-footer">
-    <div class="container">
-      <a href="index.html" class="logo"><span class="logo-mark">A</span> Airlie Marketing</a>
-      <p class="footer-tagline">Done-for-you marketing for local businesses.</p>
-      <div class="footer-meta">
-        <a href="tel:+14342180755">(434) 218-0755</a>
-        <span>|</span>
-        <a href="mailto:micah@airliemarketing.com?subject=Question%20about%20Airlie%20Marketing&body=Hi%20Micah%2C%0A%0AI%27d%20like%20to%20learn%20more%20about%20Airlie%20Marketing.%20Here%27s%20a%20bit%20about%20my%20business%3A%0A%0A-%20Business%20name%3A%0A-%20What%20your%20business%20does%3A%0A-%20Best%20number%20to%20reach%20me%3A%0A%0AThanks!">micah@airliemarketing.com</a>
-        <span>|</span>
-        <span>Based in Charlottesville, Virginia</span>
-        <span>|</span>
-        <span>© 2026</span>
-      </div>
+    <div class="container footer-row">
+      <a href="index.html" class="wordmark-inline" aria-label="Airlie Marketing — home">AIRLIE <span class="wmi-sub">MARKETING</span></a>
+      <p class="footer-line">Done-for-you marketing for local businesses · Based in Charlottesville, Virginia · © 2026</p>
     </div>
   </footer>
 
   <!-- Mobile sticky CTA (phones only) -->
   <div class="mobile-cta-bar">
-    <a href="contact.html" class="btn btn-primary">Get in touch</a>
+    <a href="contact.html" class="btn btn-gold">Get in touch</a>
   </div>
 
   <script>

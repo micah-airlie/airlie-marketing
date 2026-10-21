@@ -17,12 +17,23 @@
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
-  <!-- Fonts: Inter -->
+  <!-- Fonts: Poppins + Caladea -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Caladea:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Intro overlay: decide synchronously (home only, once per session, skip on reduced motion) -->
+  <script>
+  (function () {
+    try {
+      var seen = sessionStorage.getItem('airlieIntroSeen');
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!seen && !reduce) document.documentElement.classList.add('intro-play');
+    } catch (e) {}
+  })();
+  </script>
 
   <!-- Block A — Business (ProfessionalService) + services and plans -->
   <script type="application/ld+json">
@@ -240,22 +251,32 @@
 </head>
 <body>
 
-  <!-- ============ HEADER / NAV ============ -->
+  <!-- ============ INTRO OVERLAY (home only, once per session) ============ -->
+  <div id="intro-overlay" aria-hidden="true">
+    <div class="intro-inner">
+      <span class="wm-name">AIRLIE</span>
+      <span class="wm-rule"></span>
+      <span class="wm-sub">MARKETING</span>
+      <p class="intro-tagline" id="intro-tagline">Marketing, for <em>you</em></p>
+    </div>
+  </div>
+
+  <!-- ============ HEADER ============ -->
   <header class="site-header">
     <div class="header-inner">
-      <a href="index.html" class="logo">
-        <span class="logo-mark">A</span>
-        <span class="logo-text">Airlie Marketing</span>
+      <a href="index.html" class="wordmark" aria-label="Airlie Marketing — home">
+        <span class="wm-name">AIRLIE</span>
+        <span class="wm-rule"></span>
+        <span class="wm-sub">MARKETING</span>
       </a>
-      <nav class="main-nav">
+      <nav class="main-nav" aria-label="Main">
         <div class="nav-links">
-          <a href="index.html" class="active">Home</a>
           <a href="products.html">Services</a>
-          <a href="#pricing">Plans</a>
+          <a href="index.html#plans">Plans</a>
           <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
+          <a href="tel:+14342180755" class="nav-phone">(434) 218-0755</a>
         </div>
-        <a href="contact.html" class="btn btn-sm btn-primary header-cta">Get in touch</a>
+        <a href="contact.html" class="btn btn-navcta">Get in touch</a>
       </nav>
     </div>
   </header>
@@ -264,296 +285,297 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero" id="top">
-    <div class="container">
-      <p class="hero-eyebrow">Done-for-you marketing for local businesses</p>
-      <h1>We handle marketing for your business, so you can focus on what you do best.</h1>
-      <p>We help local businesses get found on Google, earn more reviews, and turn more of their website visitors into customers.</p>
-      <div class="hero-actions">
-        <a href="contact.html" class="btn btn-primary">Get in touch</a>
-        <a href="products.html" class="hero-secondary">See services &amp; pricing →</a>
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="hero-eyebrow">Done-for-you marketing for local businesses</p>
+        <h1>We handle marketing for your business, <em>so you can focus on what you do best.</em></h1>
+        <p class="hero-sub">We help local businesses get found on Google, earn more reviews, and turn more of their website visitors into customers.</p>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-gold">Get in touch</a>
+          <a href="products.html" class="btn btn-outline-light">See services &amp; pricing</a>
+        </div>
+        <p class="hero-trust">Fixed prices&nbsp; ·&nbsp; No long-term contracts&nbsp; ·&nbsp; You approve everything customer-facing</p>
       </div>
-      <p class="hero-text-line">Prefer not to call? Send us a text at <a href="sms:+14342180755">(434) 218-0755</a></p>
+      <figure class="hero-figure">
+        <img src="micah-scott.jpg" alt="Micah Scott, founder of Airlie Marketing" width="400" height="500">
+        <figcaption><span class="hf-name">Micah Scott</span>, founder · <a href="about.html" class="hf-about">about me</a></figcaption>
+      </figure>
     </div>
   </section>
 
-  <!-- ============ TRUST BAR ============ -->
-  <div class="trust-bar">
-    <div class="container">
-      <span>Based in Charlottesville, VA</span>
-      <span>Fixed prices, no contracts</span>
-      <span>You approve content before it goes live</span>
+  <!-- ============ REVIEWS INTRO ============ -->
+  <section class="intro-band">
+    <div class="container intro-grid">
+      <h2 class="intro-head">Most customers read your reviews before they ever reach your website.</h2>
+      <div class="intro-copy">
+        <p>If your Google profile is incomplete or your reviews are thin, many will choose someone else without you ever knowing they looked.</p>
+        <p>That's what we fix. We keep your Google profile complete and accurate, help you earn reviews from happy customers, and make sure your website gives visitors a clear reason to call, visit or buy. You keep running your business, and we handle the marketing that brings people to it.</p>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <!-- ============ PROBLEM ============ -->
-  <section class="problem">
+  <!-- ============ WHAT WE DO ============ -->
+  <section class="services" id="services">
     <div class="container">
-      <h2>Most customers decide who to call before they ever reach your website.</h2>
-      <p>When someone needs what you sell, they search for it, compare the first few businesses that come up, and read a handful of reviews. That decision often takes a few minutes. If your Google profile is incomplete or your reviews are thin, they choose someone else, and you never find out they were looking.</p>
-      <p>That's what we fix. We keep your Google profile complete and accurate, help you earn reviews from happy customers, and make sure your website gives visitors a clear reason to call, visit or buy. You keep running your business, and we handle the marketing that brings people to it.</p>
+      <div class="services-head">
+        <h2>What we do</h2>
+        <a href="products.html" class="services-all">All services &amp; pricing</a>
+      </div>
+      <div class="services-table">
+        <div class="service-row">
+          <h3>Google Business Profile</h3>
+          <p>For most local businesses, this is the first thing a new customer sees. We set it up completely and keep your hours, photos and details accurate, so the people who find you can call, visit or book.</p>
+          <p class="service-price">From $195</p>
+        </div>
+        <div class="service-row">
+          <h3>Reviews</h3>
+          <p>We help you earn more reviews and respond to every one in your voice. Reviews are often what decides whether a customer picks you or the next business.</p>
+          <p class="service-price">From $225</p>
+        </div>
+        <div class="service-row">
+          <h3>AI &amp; search visibility</h3>
+          <p>When someone asks Google or an AI assistant for a business like yours, we make sure it finds accurate, complete information about you.</p>
+          <p class="service-price">$550</p>
+        </div>
+        <div class="service-row">
+          <h3>Social media</h3>
+          <p>Twelve posts a month on Facebook and Instagram, built around your business and written in your voice.</p>
+          <p class="service-price">$350 / 30 days</p>
+        </div>
+        <div class="service-row">
+          <h3>Your website</h3>
+          <p>A refresh of the site you have, or a new one-page site built to turn visitors into customers.</p>
+          <p class="service-price">From $450</p>
+        </div>
+        <div class="service-row soon">
+          <h3>Paid ads</h3>
+          <p>Google and Facebook ads that reach customers in your service area.</p>
+          <p class="soon-tag">COMING SOON</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ============ HOW IT WORKS ============ -->
   <section class="how">
     <div class="container">
-      <div class="section-intro">
-        <h2>How it works</h2>
-      </div>
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
+      <h2>How it works</h2>
+      <ol class="how-grid">
+        <li class="how-step">
+          <span class="how-num" aria-hidden="true">1</span>
           <h3>Tell us what you need</h3>
           <p>Fill out a <a href="contact.html">short form</a> about your business and goals, and we'll be in touch to talk it through.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
+        </li>
+        <li class="how-step">
+          <span class="how-num" aria-hidden="true">2</span>
           <h3>Get a clear, fixed price</h3>
           <p>We confirm what's included and send an invoice you can pay online.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
+        </li>
+        <li class="how-step">
+          <span class="how-num" aria-hidden="true">3</span>
           <h3>We get to work</h3>
           <p>You approve anything customer-facing before it goes live, and we handle the rest.</p>
-        </div>
-      </div>
+        </li>
+      </ol>
     </div>
   </section>
 
-  <!-- ============ WHAT YOU GET ============ -->
-  <section class="features">
+  <!-- ============ MONTHLY PLANS ============ -->
+  <section class="plans" id="plans">
     <div class="container">
-      <div class="section-intro">
-        <h2>What we do</h2>
-      </div>
-      <div class="feature-grid">
-        <div class="feature">
-          <div class="feature-icon">
-            <svg class="icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          </div>
-          <h3>Google Business Profile</h3>
-          <p>For most local businesses, this is the first thing a new customer sees. We set it up completely and keep your hours, photos and details accurate, so the people who find you can call, visit or book.</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon">
-            <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          </div>
-          <h3>Reviews</h3>
-          <p>We help you earn more reviews and respond to every one in your voice. Reviews are often what decides whether a customer picks you or the next business.</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon">
-            <svg class="icon" viewBox="0 0 24 24"><path d="M9.94 15.5A2 2 0 0 0 8.5 14.06l-6.14-1.58a.5.5 0 0 1 0-.96L8.5 9.94A2 2 0 0 0 9.94 8.5l1.58-6.14a.5.5 0 0 1 .96 0L14.06 8.5A2 2 0 0 0 15.5 9.94l6.14 1.58a.5.5 0 0 1 0 .96L15.5 14.06a2 2 0 0 0-1.44 1.44l-1.58 6.14a.5.5 0 0 1-.96 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/></svg>
-          </div>
-          <h3>AI &amp; search visibility</h3>
-          <p>When someone asks Google or an AI assistant for a business like yours, we make sure it finds accurate, complete information about you.</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon">
-            <svg class="icon" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-          </div>
-          <h3>Social media posts</h3>
-          <p>Twelve posts a month on Facebook and Instagram, built around your business and written in your voice.</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon">
-            <svg class="icon" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-          </div>
-          <h3>Your website</h3>
-          <p>A refresh of the site you have, or a new one-page site built to turn visitors into calls.</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon">
-            <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg>
-          </div>
-          <h3>Paid ads <span class="chip-soon">Coming soon</span></h3>
-          <p>Google and Facebook ads that reach customers in your service area.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ PRICING / PLANS ============ -->
-  <section class="pricing" id="pricing">
-    <div class="container">
-      <div class="pricing-lead">
+      <div class="plans-head">
         <h2>Monthly plans</h2>
-        <p>Our ongoing services, bundled together for less.</p>
+        <p class="plans-tag">Our ongoing services, bundled together for less.</p>
       </div>
-
-      <div class="price-grid">
-        <!-- Get Found -->
-        <div class="price-card">
-          <div class="price-name">Get Found</div>
-          <div class="price-tag">$355<span>/30 days</span></div>
-          <div class="price-sub">The essentials for getting found and chosen locally.</div>
-          <ul class="price-list">
-            <li>Google Profile Management</li>
-            <li>Review Management</li>
-          </ul>
-          <p class="plan-maths">Bought separately <strong>$420</strong> · <span class="save">You save $65</span></p>
-          <a href="contact.html?service=plan-get-found" class="btn btn-outline">Ask about this</a>
+      <div class="plans-grid">
+        <div class="plan-card">
+          <h3 class="plan-name">GET FOUND</h3>
+          <p class="plan-price">$355<span> / 30 days</span></p>
+          <p class="plan-desc">Google Profile Management and Review Management.</p>
+          <p class="plan-maths">Bought separately $420 · <span class="save">You save $65</span></p>
+          <a href="contact.html?service=plan-get-found" class="btn btn-plan-outline">Ask about this</a>
         </div>
-
-        <!-- Grow (featured) -->
-        <div class="price-card featured">
-          <div class="badge">Best Value</div>
-          <div class="price-name">Grow</div>
-          <div class="price-tag">$655<span>/30 days</span></div>
-          <div class="price-sub">Get found, and stay in front of your customers on social media.</div>
-          <ul class="price-list">
-            <li class="plus">Everything in Get Found, plus:</li>
-            <li>30-Day Social Content Pack</li>
-          </ul>
-          <p class="plan-maths">Bought separately <strong>$770</strong> · <span class="save">You save $115</span></p>
-          <a href="contact.html?service=plan-grow" class="btn btn-primary">Ask about this</a>
+        <div class="plan-card featured">
+          <h3 class="plan-name">GROW <span class="plan-badge">BEST VALUE</span></h3>
+          <p class="plan-price">$655<span> / 30 days</span></p>
+          <p class="plan-desc">Everything in Get Found, plus the 30-Day Social Content Pack.</p>
+          <p class="plan-maths">Bought separately $770 · <span class="save">You save $115</span></p>
+          <a href="contact.html?service=plan-grow" class="btn btn-gold plan-btn">Ask about this</a>
         </div>
-
-        <!-- Pro (coming soon) -->
-        <div class="price-card soon">
-          <div class="price-name">Pro</div>
-          <div class="price-tag">Coming soon</div>
-          <div class="price-sub">For owners who want to push for more leads.</div>
-          <ul class="price-list">
-            <li class="plus">Everything in Grow, plus:</li>
-            <li>Google or Meta ads management</li>
-          </ul>
+        <div class="plan-card soon">
+          <h3 class="plan-name">PRO</h3>
+          <p class="plan-soon">Coming soon</p>
+          <p class="plan-desc">Everything in Grow, plus Google or Meta ads management.</p>
         </div>
       </div>
-
-      <div class="plans-notes">
-        <p>Each plan covers 30 days, with no long-term contract. Most owners spend about 10–15 minutes a month on it.</p>
-        <p>Only need one piece? Every service is also available on its own. <a href="products.html">See all services</a></p>
-      </div>
+      <p class="plans-note">Each plan covers 30 days, with no long-term contract. Only need one piece? <a href="products.html">Every service is available on its own.</a></p>
     </div>
   </section>
 
-  <!-- ============ WHY US ============ -->
-  <section class="why">
+  <!-- ============ WHY ============ -->
+  <section class="why" id="why">
     <div class="container">
-      <div class="section-intro">
-        <h2>Why local businesses work with us</h2>
-      </div>
+      <h2>Why local businesses work with us</h2>
       <div class="why-grid">
         <div class="why-item">
-          <div class="why-check"><svg class="icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <div>
-            <h3>We start with what brings in customers.</h3>
-            <p>For most local businesses, that means a strong Google profile and a steady flow of reviews. Social media supports both, but it doesn't replace them.</p>
-          </div>
+          <h3>We start with what brings in customers.</h3>
+          <p>For most local businesses, that means a strong Google profile and a steady flow of reviews. Social media supports both, but it doesn't replace them.</p>
         </div>
         <div class="why-item">
-          <div class="why-check"><svg class="icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <div>
-            <h3>We learn your business first.</h3>
-            <p>Before we write anything, we take the time to understand what you sell, who buys it and how you talk about it.</p>
-          </div>
+          <h3>We learn your business first.</h3>
+          <p>Before we write anything, we take the time to understand what you sell, who buys it and how you talk about it.</p>
         </div>
         <div class="why-item">
-          <div class="why-check"><svg class="icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <div>
-            <h3>Based in Charlottesville.</h3>
-            <p>We're a local business ourselves, and we work with local businesses wherever their customers are searching.</p>
-          </div>
-        </div>
-        <div class="why-item">
-          <div class="why-check"><svg class="icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <div>
-            <h3>No long-term contracts.</h3>
-            <p>Every service has a fixed price and a clear finish date.</p>
-          </div>
-        </div>
-        <div class="why-item">
-          <div class="why-check"><svg class="icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-          <div>
-            <h3>You stay in control.</h3>
-            <p>Posts, website changes and replies to critical reviews come to you for approval first.</p>
-          </div>
+          <h3>You stay in control.</h3>
+          <p>Posts, website changes and replies to critical reviews come to you for approval first.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============ FAQ ============ -->
-  <section class="faq">
-    <div class="container">
-      <div class="section-intro" style="margin: 0 auto; text-align: center;">
-        <h2>Frequently asked questions</h2>
-      </div>
+  <section class="faq" id="faq">
+    <div class="container faq-wrap">
+      <h2>Questions owners ask</h2>
       <div class="faq-list">
         <details class="faq-item">
-          <summary>Do I have to sign a contract? <span class="faq-icon"></span></summary>
+          <summary>Do I have to sign a contract?</summary>
           <div class="faq-answer">No. Every service is either a one-time project or a 30-day block, so there's no long-term commitment.</div>
         </details>
         <details class="faq-item">
-          <summary>How much of my time does this take? <span class="faq-icon"></span></summary>
+          <summary>How much of my time does this take?</summary>
           <div class="faq-answer">Very little. We'll talk through strategy together, then you approve the content and we handle everything else.</div>
         </details>
         <details class="faq-item">
-          <summary>What does it cost? <span class="faq-icon"></span></summary>
+          <summary>What does it cost?</summary>
           <div class="faq-answer">Pricing for every service is on our <a href="products.html">services page</a>.</div>
         </details>
         <details class="faq-item">
-          <summary>When does the work start? <span class="faq-icon"></span></summary>
+          <summary>When does the work start?</summary>
           <div class="faq-answer">As soon as we have the access and information we need from you.</div>
         </details>
         <details class="faq-item">
-          <summary>How do I pay? <span class="faq-icon"></span></summary>
+          <summary>How do I pay?</summary>
           <div class="faq-answer">Setups and 30-day services are paid up front, by invoice you can pay online. Website projects are billed half up front and half at launch.</div>
         </details>
         <details class="faq-item">
-          <summary>What if I'm not sure what I need? <span class="faq-icon"></span></summary>
+          <summary>What if I'm not sure what I need?</summary>
           <div class="faq-answer">Fill out our <a href="contact.html">contact form</a> and we'll set up a time to talk and recommend the right place to start.</div>
         </details>
       </div>
     </div>
   </section>
 
-  <!-- ============ FINAL CTA ============ -->
-  <section class="final-cta">
-    <div class="container">
-      <h2>Let's get your marketing off your plate.</h2>
-      <p>Tell us about your business and we'll recommend the right place to start.</p>
-      <div class="final-actions">
-        <a href="contact.html" class="btn btn-primary">Get in touch</a>
-        <a href="products.html" class="cta-sublink">See services &amp; pricing</a>
-        <div class="final-contact">
-          <a href="tel:+14342180755">
-            <svg class="icon" viewBox="0 0 24 24" width="18" height="18"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            Call or text: (434) 218-0755
-          </a>
-          <a href="mailto:micah@airliemarketing.com?subject=Question%20about%20Airlie%20Marketing&body=Hi%20Micah%2C%0A%0AI%27d%20like%20to%20learn%20more%20about%20Airlie%20Marketing.%20Here%27s%20a%20bit%20about%20my%20business%3A%0A%0A-%20Business%20name%3A%0A-%20What%20your%20business%20does%3A%0A-%20Best%20number%20to%20reach%20me%3A%0A%0AThanks!">
-            <svg class="icon" viewBox="0 0 24 24" width="18" height="18"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            micah@airliemarketing.com
-          </a>
+  </main>
+
+  <!-- ============ CONTACT BAND + FOOTER ============ -->
+  <section class="contact-band" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-pitch">
+        <h2>Let's get your marketing off your plate.</h2>
+        <p>Tell us about your business and we'll recommend the right place to start.</p>
+        <p class="contact-lines"><a href="tel:+14342180755">(434) 218-0755</a>&nbsp; ·&nbsp; <a href="mailto:micah@airliemarketing.com?subject=Question%20about%20Airlie%20Marketing">micah@airliemarketing.com</a></p>
+      </div>
+      <div class="quick-form-wrap">
+        <div class="quick-error" id="qf-error">That didn't send. Please try again, or email <a href="mailto:micah@airliemarketing.com">micah@airliemarketing.com</a>.</div>
+        <form id="quick-form" class="quick-form" action="https://api.web3forms.com/submit" method="POST" aria-label="Quick contact">
+          <input type="hidden" name="access_key" value="a2ffef39-b2a8-4dba-898c-4112eff6d57f">
+          <input type="hidden" name="subject" value="New enquiry from airliemarketing.com (home quick form)">
+          <input type="hidden" name="from_name" value="Airlie website">
+          <input type="hidden" name="services" value="Home page quick form">
+          <input type="hidden" name="redirect" value="https://airliemarketing.com/contact?sent=1">
+          <!-- Honeypot: real people never see or check this -->
+          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" style="display:none;">
+          <label>Name<input type="text" name="name" required autocomplete="name"></label>
+          <label>Business name<input type="text" name="business_name" required autocomplete="organization"></label>
+          <label>Email<input type="email" name="email" required autocomplete="email"></label>
+          <button type="submit" class="btn btn-gold quick-submit">Get in touch</button>
+          <a href="contact.html" class="quick-more">Want to tell us more? Use the full contact form.</a>
+        </form>
+        <div class="quick-success" id="qf-success">
+          <h3>Thanks — we'll be in touch within one business day.</h3>
         </div>
       </div>
     </div>
-  </section>
-
-  </main>
-
-  <!-- ============ FOOTER ============ -->
-  <footer class="site-footer">
-    <div class="container">
-      <a href="index.html" class="logo"><span class="logo-mark">A</span> Airlie Marketing</a>
-      <p class="footer-tagline">Done-for-you marketing for local businesses.</p>
-      <div class="footer-meta">
-        <a href="tel:+14342180755">(434) 218-0755</a>
-        <span>|</span>
-        <a href="mailto:micah@airliemarketing.com?subject=Question%20about%20Airlie%20Marketing&body=Hi%20Micah%2C%0A%0AI%27d%20like%20to%20learn%20more%20about%20Airlie%20Marketing.%20Here%27s%20a%20bit%20about%20my%20business%3A%0A%0A-%20Business%20name%3A%0A-%20What%20your%20business%20does%3A%0A-%20Best%20number%20to%20reach%20me%3A%0A%0AThanks!">micah@airliemarketing.com</a>
-        <span>|</span>
-        <span>Based in Charlottesville, Virginia</span>
-        <span>|</span>
-        <span>© 2026</span>
-      </div>
+    <div class="container footer-row">
+      <a href="index.html" class="wordmark-inline" aria-label="Airlie Marketing — home">AIRLIE <span class="wmi-sub">MARKETING</span></a>
+      <p class="footer-line">Done-for-you marketing for local businesses · Based in Charlottesville, Virginia · © 2026</p>
     </div>
-  </footer>
+  </section>
 
   <!-- Mobile sticky CTA (phones only) -->
   <div class="mobile-cta-bar">
-    <a href="contact.html" class="btn btn-primary">Get in touch</a>
+    <a href="contact.html" class="btn btn-gold">Get in touch</a>
   </div>
+
+  <!-- Intro animation timing + skip -->
+  <script>
+  (function () {
+    var root = document.documentElement;
+    if (!root.classList.contains('intro-play')) return;
+    try { sessionStorage.setItem('airlieIntroSeen', '1'); } catch (e) {}
+    var overlay = document.getElementById('intro-overlay');
+    var done = false, t0, t1, t2;
+    function removeOverlay() {
+      if (overlay && overlay.parentNode) overlay.parentNode.removeChild(overlay);
+      root.classList.remove('intro-play', 'intro-hiding', 'intro-tagline-in');
+    }
+    function detach() {
+      ['click', 'touchstart', 'keydown', 'wheel', 'scroll'].forEach(function (ev) {
+        window.removeEventListener(ev, skip, true);
+      });
+    }
+    function end() {
+      if (done) return; done = true;
+      clearTimeout(t0); clearTimeout(t1); clearTimeout(t2);
+      detach();
+      root.classList.add('intro-hiding');
+      setTimeout(removeOverlay, 520);
+    }
+    function skip() { end(); }
+    ['click', 'touchstart', 'keydown', 'wheel', 'scroll'].forEach(function (ev) {
+      window.addEventListener(ev, skip, true);
+    });
+    t0 = setTimeout(function () { root.classList.add('intro-tagline-in'); }, 500);
+    t1 = setTimeout(function () { root.classList.add('intro-hiding'); }, 1500);
+    t2 = setTimeout(function () { detach(); removeOverlay(); done = true; }, 2000);
+  })();
+  </script>
+
+  <!-- Quick contact form (Web3Forms, client-side) -->
+  <script>
+  (function () {
+    var form = document.getElementById('quick-form');
+    var errorBox = document.getElementById('qf-error');
+    var success = document.getElementById('qf-success');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (errorBox) errorBox.style.display = 'none';
+      var btn = form.querySelector('button[type="submit"]');
+      var label = btn ? btn.textContent : '';
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+      var data = Object.fromEntries(new FormData(form));
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      })
+      .then(function (res) { return res.json().then(function (json) { return { ok: res.ok, json: json }; }); })
+      .then(function (r) {
+        if (r.ok && r.json && r.json.success !== false) {
+          form.style.display = 'none';
+          if (success) success.style.display = 'block';
+          success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else { throw new Error('submit failed'); }
+      })
+      .catch(function () {
+        if (errorBox) errorBox.style.display = 'block';
+        if (btn) { btn.disabled = false; btn.textContent = label; }
+      });
+    });
+  })();
+  </script>
 
 </body>
 </html>
